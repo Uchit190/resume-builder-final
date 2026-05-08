@@ -1,0 +1,12 @@
+/dashboard        /dashboard.html       200
+/dashboard/       /dashboard.html       200
+/signup           /signup.html          200
+/signup/          /signup.html          200
+/technical        /technical.html       200
+/technical/       /technical.html       200
+/non-technical    /non-technical.html   200
+/non-technical/   /non-technical.html   200
+/login            /index.html           200
+/login/           /index.html           200
+/index            /index.html           200
+/index/           /index.html           200

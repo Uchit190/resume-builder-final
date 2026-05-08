@@ -1,0 +1,28 @@
+{
+  "name": "resumeforge-backend",
+  "version": "2.0.0",
+  "description": "Secure MySQL backend for ResumeForge with JWT auth and OpenRouter voice enrichment.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "check": "node --check server.js && node --check src/app.js && node --check src/config/mysql.js && node --check src/controllers/authController.js && node --check src/controllers/resumeController.js && node --check src/controllers/voiceController.js && node --check src/middleware/auth.js && node --check src/middleware/errorHandler.js && node --check src/middleware/validateRequest.js && node --check src/routes/authRoutes.js && node --check src/routes/resumeRoutes.js && node --check src/routes/voiceRoutes.js && node --check src/services/authService.js && node --check src/services/openRouterService.js && node --check src/services/resumeService.js && node --check src/services/userService.js && node --check src/services/voiceAssistantService.js && node --check src/utils/ApiError.js && node --check src/utils/asyncHandler.js && node --check src/utils/validators.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.2.1",
+    "express-validator": "^7.3.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.15.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}

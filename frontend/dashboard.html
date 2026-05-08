@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard — ResumeForge</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+
+
+
+        <div class="orb-container">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+            <div class="orb orb-4"></div>
+            <div class="orb orb-5"></div>
+        </div>
+
+        <div class="stars-container">
+            <div class="meteor meteor-1"></div>
+            <div class="meteor meteor-2"></div>
+            <div class="meteor meteor-3"></div>
+            <div class="meteor meteor-4"></div>
+            <div class="meteor meteor-5"></div>
+        </div>
+
+        <div class="aurora-container">
+            <div class="aurora aurora-1"></div>
+            <div class="aurora aurora-2"></div>
+        </div>
+
+        <canvas id="particleCanvas"></canvas>
+
+        <!-- NAVBAR -->
+        <nav class="navbar anim-fadeInDown">
+            <a href="dashboard.html" class="nav-logo">
+                <div class="nav-logo-icon">📄</div>
+                <span>Resume<em>Forge</em></span>
+            </a>
+            <div class="nav-center">
+                <a href="#" class="nav-link active">Dashboard</a>
+                <a href="#" class="nav-link">My Resumes</a>
+                <a href="#" class="nav-link">Templates</a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span class="theme-toggle-icon sun">☀️</span>
+                    <span class="theme-toggle-icon moon">🌙</span>
+                </button>
+                <div class="user-avatar" title="Profile">RS</div>
+            </div>
+        </nav>
+
+        <div class="page-wrapper">
+
+            <!-- HERO -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <div class="badge badge-accent anim-fadeInUp delay-1">✦ AI-Powered Resume Builder</div>
+                    <h1 class="hero-title anim-fadeInUp delay-2">
+                        What kind of resume<br />
+                        will you build <span class="gradient-text">today?</span>
+                    </h1>
+                    <p class="hero-sub anim-fadeInUp delay-3">
+                        Choose your path and craft a standout resume in minutes with AI assistance.
+                    </p>
+                </div>
+            </section>
+
+            <!-- RESUME TYPE CARDS -->
+            <section class="type-section">
+                <div class="type-cards">
+
+                    <!-- TECHNICAL -->
+                    <div class="type-big-card glass-card anim-slideLeft delay-2" onclick="openBuilder('technical')">
+                        <div class="tbc-bg tech-bg"></div>
+                        <div class="tbc-content">
+                            <div class="tbc-icon-wrap">
+                                <span class="tbc-icon">💻</span>
+                                <div class="icon-pulse"></div>
+                            </div>
+                            <div class="tbc-badge">
+                                <span class="badge badge-accent">Most Popular</span>
+                            </div>
+                            <h2>Technical Resume</h2>
+                            <p>Designed for software engineers, data scientists, DevOps, UX/UI designers, and all tech
+                                professionals.</p>
+                            <ul class="tbc-features">
+                                <li><span class="feat-dot"></span> Skills & Tech Stack section</li>
+                                <li><span class="feat-dot"></span> GitHub / Portfolio links</li>
+                                <li><span class="feat-dot"></span> Projects & Contributions</li>
+                                <li><span class="feat-dot"></span> ATS keyword optimization</li>
+                            </ul>
+                            <div class="tbc-templates">
+                                <span>Templates:</span>
+                                <div class="template-pills">
+                                    <span>Minimalist</span>
+                                    <span>Dark Dev</span>
+                                    <span>Clean Pro</span>
+                                    <span>+20 more</span>
+                                </div>
+                            </div>
+                            <button class="btn-primary tbc-btn">Start Technical Resume <span>→</span></button>
+                        </div>
+                    </div>
+
+                    <!-- NON-TECHNICAL -->
+                    <div class="type-big-card glass-card anim-slideRight delay-2"
+                        onclick="openBuilder('non-technical')">
+                        <div class="tbc-bg non-tech-bg"></div>
+                        <div class="tbc-content">
+                            <div class="tbc-icon-wrap">
+                                <span class="tbc-icon">📈</span>
+                                <div class="icon-pulse" style="--pulse-color: rgba(0,198,174,0.4);"></div>
+                            </div>
+                            <div class="tbc-badge">
+                                <span class="badge badge-green">Business & Creative</span>
+                            </div>
+                            <h2>Non-Technical Resume</h2>
+                            <p>Perfect for MBA, Marketing, Finance, HR, Sales, Operations, and all business
+                                professionals.
+                            </p>
+                            <ul class="tbc-features">
+                                <li><span class="feat-dot green"></span> Achievements & KPIs</li>
+                                <li><span class="feat-dot green"></span> Leadership highlights</li>
+                                <li><span class="feat-dot green"></span> Executive summary</li>
+                                <li><span class="feat-dot green"></span> Industry keywords</li>
+                            </ul>
+                            <div class="tbc-templates">
+                                <span>Templates:</span>
+                                <div class="template-pills green">
+                                    <span>Executive</span>
+                                    <span>Classic</span>
+                                    <span>Modern MBA</span>
+                                    <span>+18 more</span>
+                                </div>
+                            </div>
+                            <button class="btn-primary tbc-btn" style="background: var(--accent-grad-2);">
+                                Start Non-Tech Resume <span>→</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- STATS BAR -->
+            <section class="stats-bar glass-card anim-fadeInUp delay-5">
+                <div class="stat-item">
+                    <strong class="gradient-text">50,000+</strong>
+                    <span>Resumes Created</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <strong class="gradient-text-2">92%</strong>
+                    <span>Interview Success Rate</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <strong class="gradient-text">50+</strong>
+                    <span>Premium Templates</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <strong class="gradient-text-2">4.9 ★</strong>
+                    <span>Average Rating</span>
+                </div>
+            </section>
+
+            <!-- FEATURES SECTION -->
+            <section class="features-section">
+                <h2 class="section-title anim-fadeInUp">Why <span class="gradient-text">ResumeForge?</span></h2>
+                <div class="features-grid">
+                    <div class="feat-card glass-card">
+                        <div class="feat-icon">⚡</div>
+                        <h3>ATS Optimized</h3>
+                        <p>Every resume is scanned and optimized for Applicant Tracking Systems to get you past the
+                            first
+                            filter.</p>
+                    </div>
+                    <div class="feat-card glass-card">
+                        <div class="feat-icon">🎨</div>
+                        <h3>50+ Templates</h3>
+                        <p>Professional designs for every industry — from minimalist tech styles to bold executive
+                            layouts.
+                        </p>
+                    </div>
+                    <div class="feat-card glass-card">
+                        <div class="feat-icon">📥</div>
+                        <h3>PDF Export</h3>
+                        <p>Download your resume as a pixel-perfect PDF with one click, ready to send to any employer.
+                        </p>
+                    </div>
+                    <div class="feat-card glass-card">
+                        <div class="feat-icon">🤖</div>
+                        <h3>AI Suggestions</h3>
+                        <p>Get smart bullet point suggestions and keyword recommendations based on your target role.</p>
+                    </div>
+                    <div class="feat-card glass-card">
+                        <div class="feat-icon">🔒</div>
+                        <h3>Secure & Private</h3>
+                        <p>Your data is encrypted and never shared. Full control over your personal information at all
+                            times.</p>
+                    </div>
+                    <div class="feat-card glass-card">
+                        <div class="feat-icon">📱</div>
+                        <h3>Mobile Friendly</h3>
+                        <p>Build and edit your resume on any device — desktop, tablet, or smartphone with full
+                            responsiveness.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div><!-- end page-wrapper -->
+
+        <!-- RESUME BUILDER MODAL -->
+        <div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+            <div class="builder-modal" id="builderModal">
+
+                <div class="modal-header">
+                    <div class="modal-header-left">
+                        <div class="modal-icon" id="modalIcon">💻</div>
+                        <div>
+                            <h3 id="modalTitle">Technical Resume Builder</h3>
+                            <p id="modalSub">Perfect for developers, engineers & tech professionals</p>
+                        </div>
+                    </div>
+                    <button class="modal-close" onclick="closeModal()">✕</button>
+                </div>
+
+                <div class="modal-tabs">
+                    <button class="mtab active" onclick="switchTab(this,'basics')">👤 Basics</button>
+                    <button class="mtab" onclick="switchTab(this,'experience')">💼 Experience</button>
+                    <button class="mtab" onclick="switchTab(this,'skills')">⚡ Skills</button>
+                    <button class="mtab" onclick="switchTab(this,'education')">🎓 Education</button>
+                </div>
+
+                <div class="modal-body">
+
+                    <!-- BASICS TAB -->
+                    <div class="mtab-content active-tab" id="tab-basics">
+                        <div class="modal-form-grid">
+                            <div class="input-group">
+                                <label>Full Name</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">👤</span>
+                                    <input type="text" placeholder="Rahul Sharma" />
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label>Job Title</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">💼</span>
+                                    <input type="text" placeholder="Software Engineer" />
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label>Email</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">✉️</span>
+                                    <input type="email" placeholder="rahul@example.com" />
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label>Phone</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">📱</span>
+                                    <input type="tel" placeholder="+91 98765 43210" />
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label>City / Location</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">📍</span>
+                                    <input type="text" placeholder="Bengaluru, India" />
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label>LinkedIn URL</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">🔗</span>
+                                    <input type="url" placeholder="linkedin.com/in/rahulsharma" />
+                                </div>
+                            </div>
+                            <div class="input-group" style="grid-column:1/-1;">
+                                <label>Professional Summary</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon" style="top:14px;align-self:flex-start;">📝</span>
+                                    <textarea placeholder="Brief 2-3 line summary of your experience and goals..."
+                                        rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-primary" style="align-self:flex-start;"
+                            onclick="switchTabByName('experience')">Next: Experience →</button>
+                    </div>
+
+                    <!-- EXPERIENCE TAB -->
+                    <div class="mtab-content" id="tab-experience">
+                        <div class="exp-entry">
+                            <div class="modal-form-grid">
+                                <div class="input-group">
+                                    <label>Company Name</label>
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">🏢</span>
+                                        <input type="text" placeholder="Google" />
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label>Role / Position</label>
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">💼</span>
+                                        <input type="text" placeholder="Senior Software Engineer" />
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label>Start Date</label>
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">📅</span>
+                                        <input type="text" placeholder="Jan 2022" />
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label>End Date</label>
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">📅</span>
+                                        <input type="text" placeholder="Present" />
+                                    </div>
+                                </div>
+                                <div class="input-group" style="grid-column:1/-1;">
+                                    <label>Key Achievements (bullet points)</label>
+                                    <div class="input-wrapper">
+                                        <span class="input-icon" style="top:14px;align-self:flex-start;">✨</span>
+                                        <textarea
+                                            placeholder="• Reduced load time by 40% by optimizing API calls&#10;• Led team of 5 engineers to deliver project 2 weeks ahead of schedule"
+                                            rows="4"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-secondary add-more-btn" onclick="addExperience()">+ Add Another
+                            Experience</button>
+                        <button class="btn-primary" style="align-self:flex-start;"
+                            onclick="switchTabByName('skills')">Next:
+                            Skills →</button>
+                    </div>
+
+                    <!-- SKILLS TAB -->
+                    <div class="mtab-content" id="tab-skills">
+                        <div class="modal-form-grid">
+                            <div class="input-group" style="grid-column:1/-1;">
+                                <label>Technical Skills (comma separated)</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">⚡</span>
+                                    <input type="text" placeholder="JavaScript, React, Node.js, Python, AWS, Docker" />
+                                </div>
+                            </div>
+                            <div class="input-group" style="grid-column:1/-1;">
+                                <label>Tools & Platforms</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">🔧</span>
+                                    <input type="text" placeholder="VS Code, Git, Jira, Figma, Postman" />
+                                </div>
+                            </div>
+                            <div class="input-group" style="grid-column:1/-1;">
+                                <label>Soft Skills</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">🤝</span>
+                                    <input type="text" placeholder="Team Leadership, Problem Solving, Communication" />
+                                </div>
+                            </div>
+                            <div class="input-group" style="grid-column:1/-1;" id="tech-extra">
+                                <label>GitHub / Portfolio</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">💻</span>
+                                    <input type="url" placeholder="https://github.com/yourusername" />
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-primary" style="align-self:flex-start;"
+                            onclick="switchTabByName('education')">Next: Education →</button>
+                    </div>
+
+                    <!-- EDUCATION TAB -->
+                    <div class="mtab-content" id="tab-education">
+                        <div class="modal-form-grid">
+                            <div class="input-group">
+                                <label>Degree</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">🎓</span>
+                                    <input type="text" placeholder="B.Tech Computer Science" />
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label>University / College</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">🏫</span>
+                                    <input type="text" placeholder="IIT Delhi" />
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label>Year of Graduation</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">📅</span>
+                                    <input type="number" placeholder="2023" min="1990" max="2030" />
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label>CGPA / Percentage</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">📊</span>
+                                    <input type="text" placeholder="8.5 / 10" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-cta">
+                            <div class="cta-info glass-card">
+                                <span>🎉</span>
+                                <p>All done! Your resume is ready to generate.</p>
+                            </div>
+                            <button class="btn-primary" style="width:100%;" onclick="generateResume()">
+                                ✨ Generate My Resume
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script src="theme.js"></script>
+        <script src="routes.js"></script>
+        <script src="config.js"></script>
+        <script src="app.js"></script>
+        <script>
+            function openBuilder(type) {
+                ResumeForgeApp.setResumeType(type);
+
+                if (type === 'technical') {
+                    window.location.href = 'technical.html';
+                } else {
+                    window.location.href = 'non-technical.html';
+                }
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.feat-card').forEach((el, i) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`;
+                observer.observe(el);
+            });
+
+            ResumeForgeApp.updateAvatar();
+        </script>
+    </body>
+
+</html>

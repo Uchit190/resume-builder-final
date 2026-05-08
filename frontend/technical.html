@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technical Resume Builder - ResumeForge</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="technical.css" />
+    <link rel="stylesheet" href="voice-assistant.css" />
+</head>
+
+<body>
+    <div class="orb-container">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="orb orb-4"></div>
+        <div class="orb orb-5"></div>
+    </div>
+
+    <div class="stars-container">
+        <div class="meteor meteor-1"></div>
+        <div class="meteor meteor-2"></div>
+        <div class="meteor meteor-3"></div>
+        <div class="meteor meteor-4"></div>
+        <div class="meteor meteor-5"></div>
+    </div>
+
+    <div class="aurora-container">
+        <div class="aurora aurora-1"></div>
+        <div class="aurora aurora-2"></div>
+    </div>
+
+    <canvas id="particleCanvas"></canvas>
+
+    <nav class="navbar anim-fadeInDown">
+        <a href="dashboard.html" class="nav-logo">
+            <div class="nav-logo-icon">📄</div>
+            <span>Resume<em>Forge</em></span>
+        </a>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span class="theme-toggle-icon sun">☀️</span>
+                <span class="theme-toggle-icon moon">🌙</span>
+            </button>
+            <a href="dashboard.html" class="btn-secondary" style="padding:10px 22px;font-size:0.9rem;">← Back</a>
+            <button type="button" onclick="ResumeBuilderPage.logout()" class="btn-secondary"
+                style="padding:10px 22px;font-size:0.9rem;color:#ef4444;border-color:#ef4444;">🚪 Logout</button>
+        </div>
+    </nav>
+
+    <div class="builder-page-wrapper">
+        <div class="builder-page-header anim-fadeInUp delay-1">
+            <div class="builder-page-icon">💻</div>
+            <div>
+                <h1>Technical Resume Builder</h1>
+                <p>For developers, engineers, analysts, and tech professionals</p>
+            </div>
+            <span class="badge badge-accent">Most Popular</span>
+        </div>
+
+        <section id="voiceAssistantMount" class="anim-fadeInUp delay-2"></section>
+
+        <div class="builder-tabs anim-fadeInUp delay-2">
+            <button class="btab active" data-tab="basics" type="button"
+                onclick="ResumeBuilderPage.switchTab(this,'basics')">📋 Basics</button>
+            <button class="btab" data-tab="experience" type="button"
+                onclick="ResumeBuilderPage.switchTab(this,'experience')">💼 Experience</button>
+            <button class="btab" data-tab="skills" type="button"
+                onclick="ResumeBuilderPage.switchTab(this,'skills')">⚡ Skills</button>
+            <button class="btab" data-tab="projects" type="button"
+                onclick="ResumeBuilderPage.switchTab(this,'projects')">🚀 Projects</button>
+            <button class="btab" data-tab="education" type="button"
+                onclick="ResumeBuilderPage.switchTab(this,'education')">🎓 Education</button>
+        </div>
+
+        <div class="builder-body">
+            <div class="tab-content active-tab" id="tab-basics">
+                <div class="section-card glass-card">
+                    <h3 class="section-label">Personal Information</h3>
+                    <div class="form-grid-2">
+                        <div class="input-group">
+                            <label for="technical-full-name">Full Name</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">👤</span>
+                                <input id="technical-full-name" type="text" placeholder="Rahul Sharma" />
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="technical-job-title">Job Title</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">💼</span>
+                                <input id="technical-job-title" type="text" placeholder="Software Engineer" />
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="technical-email">Email</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">✉️</span>
+                                <input id="technical-email" type="email" placeholder="rahul@example.com" />
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="technical-phone">Phone</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">📞</span>
+                                <input id="technical-phone" type="tel" placeholder="+91 98765 43210" />
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="technical-linkedin">LinkedIn</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">🔗</span>
+                                <input id="technical-linkedin" type="url" placeholder="linkedin.com/in/rahulsharma" />
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="technical-github">GitHub</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">💻</span>
+                                <input id="technical-github" type="url" placeholder="github.com/rahulsharma" />
+                            </div>
+                        </div>
+                        <div class="input-group" style="grid-column:1/-1;">
+                            <label for="technical-portfolio">Portfolio / Website</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">🌐</span>
+                                <input id="technical-portfolio" type="url" placeholder="https://rahulsharma.dev" />
+                            </div>
+                        </div>
+                        <div class="input-group" style="grid-column:1/-1;">
+                            <label for="technical-summary">Professional Summary</label>
+                            <textarea id="technical-summary"
+                                placeholder="Passionate software engineer with 3+ years building scalable web applications..."
+                                rows="4"></textarea>
+                        </div>
+                    </div>
+                    <button class="btn-primary next-btn" type="button"
+                        onclick="ResumeBuilderPage.switchTabByName('experience')">Next: Experience →</button>
+                </div>
+            </div>
+
+            <div class="tab-content" id="tab-experience">
+                <div class="section-card glass-card">
+                    <h3 class="section-label">Work Experience</h3>
+                    <div class="exp-entries" id="expEntries">
+                        <div class="exp-entry">
+                            <div class="form-grid-2">
+                                <div class="input-group">
+                                    <label for="technical-experience-company-1" data-for-base="technical-experience-company">Company Name</label>
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">🏢</span>
+                                        <input id="technical-experience-company-1" data-field-base="technical-experience-company"
+                                            type="text" placeholder="Google" />
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="technical-experience-title-1" data-for-base="technical-experience-title">Job Title</label>
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">💼</span>
+                                        <input id="technical-experience-title-1" data-field-base="technical-experience-title"
+                                            type="text" placeholder="Software Engineer II" />
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="technical-experience-start-1" data-for-base="technical-experience-start">Start Date</label>
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">📅</span>
+                                        <input id="technical-experience-start-1" data-field-base="technical-experience-start"
+                                            type="month" />
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="technical-experience-end-1" data-for-base="technical-experience-end">End Date</label>
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">📅</span>
+                                        <input id="technical-experience-end-1" data-field-base="technical-experience-end"
+                                            type="month" />
+                                    </div>
+                                </div>
+                                <div class="input-group" style="grid-column:1/-1;">
+                                    <label for="technical-experience-highlights-1" data-for-base="technical-experience-highlights">Key Achievements</label>
+                                    <textarea id="technical-experience-highlights-1"
+                                        data-field-base="technical-experience-highlights"
+                                        placeholder="• Reduced API response time by 40% using caching strategies&#10;• Led team of 5 engineers to ship feature 2 weeks ahead of schedule"
+                                        rows="4"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-secondary add-more-btn" type="button"
+                        onclick="ResumeBuilderPage.addEntry('expEntries', 'exp-entry')">+ Add Experience</button>
+                    <button class="btn-primary next-btn" type="button"
+                        onclick="ResumeBuilderPage.switchTabByName('skills')">Next: Skills →</button>
+                </div>
+            </div>
+
+            <div class="tab-content" id="tab-skills">
+                <div class="section-card glass-card">
+                    <h3 class="section-label">Skills &amp; Tools</h3>
+                    <div class="form-grid-2">
+                        <div class="input-group" style="grid-column:1/-1;">
+                            <label for="technical-skills">Technical Skills <span class="label-hint">(comma separated)</span></label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">⚡</span>
+                                <input id="technical-skills" type="text"
+                                    placeholder="JavaScript, React, Node.js, Python, AWS, Docker" />
+                            </div>
+                        </div>
+                        <div class="input-group" style="grid-column:1/-1;">
+                            <label for="technical-tools">Tools &amp; Platforms</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">🔧</span>
+                                <input id="technical-tools" type="text"
+                                    placeholder="VS Code, Git, Jira, Figma, Postman, Linux" />
+                            </div>
+                        </div>
+                        <div class="input-group" style="grid-column:1/-1;">
+                            <label for="technical-soft-skills">Soft Skills</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">🤝</span>
+                                <input id="technical-soft-skills" type="text"
+                                    placeholder="Problem Solving, Team Leadership, Communication" />
+                            </div>
+                        </div>
+                        <div class="input-group" style="grid-column:1/-1;">
+                            <label for="technical-certifications">Certifications</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">🏅</span>
+                                <input id="technical-certifications" type="text"
+                                    placeholder="AWS Solutions Architect, Google Cloud Professional" />
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-primary next-btn" type="button"
+                        onclick="ResumeBuilderPage.switchTabByName('projects')">Next: Projects →</button>
+                </div>
+            </div>
+
+            <div class="tab-content" id="tab-projects">
+                <div class="section-card glass-card">
+                    <h3 class="section-label">Projects</h3>
+                    <div class="exp-entries" id="projectEntries">
+                        <div class="exp-entry">
+                            <div class="form-grid-2">
+                                <div class="input-group">
+                                    <label for="technical-project-name-1" data-for-base="technical-project-name">Project Name</label>
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">🚀</span>
+                                        <input id="technical-project-name-1" data-field-base="technical-project-name"
+                                            type="text" placeholder="E-Commerce Platform" />
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="technical-project-stack-1" data-for-base="technical-project-stack">Tech Stack Used</label>
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">⚡</span>
+                                        <input id="technical-project-stack-1" data-field-base="technical-project-stack"
+                                            type="text" placeholder="React, Node.js, MongoDB" />
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="technical-project-github-1" data-for-base="technical-project-github">GitHub Link</label>
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">💻</span>
+                                        <input id="technical-project-github-1" data-field-base="technical-project-github"
+                                            type="url" placeholder="github.com/user/project" />
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="technical-project-demo-1" data-for-base="technical-project-demo">Live Demo</label>
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">🌐</span>
+                                        <input id="technical-project-demo-1" data-field-base="technical-project-demo"
+                                            type="url" placeholder="https://myproject.vercel.app" />
+                                    </div>
+                                </div>
+                                <div class="input-group" style="grid-column:1/-1;">
+                                    <label for="technical-project-description-1" data-for-base="technical-project-description">Description</label>
+                                    <textarea id="technical-project-description-1"
+                                        data-field-base="technical-project-description"
+                                        placeholder="• Built a full-stack e-commerce app with 10K+ users&#10;• Implemented JWT auth, payment gateway, and real-time notifications"
+                                        rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-secondary add-more-btn" type="button"
+                        onclick="ResumeBuilderPage.addEntry('projectEntries', 'exp-entry')">+ Add Project</button>
+                    <button class="btn-primary next-btn" type="button"
+                        onclick="ResumeBuilderPage.switchTabByName('education')">Next: Education →</button>
+                </div>
+            </div>
+
+            <div class="tab-content" id="tab-education">
+                <div class="section-card glass-card">
+                    <h3 class="section-label">Education</h3>
+                    <div class="form-grid-2">
+                        <div class="input-group">
+                            <label for="technical-degree">Degree</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">🎓</span>
+                                <input id="technical-degree" type="text" placeholder="B.Tech Computer Science" />
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="technical-university">University / College</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">🏫</span>
+                                <input id="technical-university" type="text" placeholder="IIT Delhi" />
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="technical-graduation-year">Graduation Year</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">📅</span>
+                                <input id="technical-graduation-year" type="number" placeholder="2023" min="1990"
+                                    max="2030" />
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="technical-grade">CGPA / Percentage</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">📊</span>
+                                <input id="technical-grade" type="text" placeholder="8.5 / 10" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="generate-cta glass-card">
+                        <span>🎉</span>
+                        <p>All done. Review your draft, make any manual edits you want, and save the resume.</p>
+                    </div>
+                    <button class="btn-primary next-btn" type="button"
+                        onclick="ResumeBuilderPage.generateResume(event)">✨ Generate My Resume</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="theme.js"></script>
+    <script src="routes.js"></script>
+    <script src="mic-support.js"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+    <script src="resume-builder-page.js"></script>
+    <script src="ai-interview-assistant.js"></script>
+    <script>
+        (async function initTechnicalBuilder() {
+            await ResumeBuilderPage.init({
+                resumeTitle: 'Technical Resume',
+                resumeType: 'technical',
+                repeaters: [
+                    { containerId: 'expEntries', className: 'exp-entry' },
+                    { containerId: 'projectEntries', className: 'exp-entry' }
+                ],
+                prefillMap: [
+                    { id: 'technical-full-name', userKey: 'name' },
+                    { id: 'technical-job-title', userKey: 'jobTitle' },
+                    { id: 'technical-email', userKey: 'email' }
+                ],
+                voiceStorageKey: 'rf-voice-session-technical'
+            });
+
+            const assistant = ResumeVoiceAssistant.create({
+                mountSelector: '#voiceAssistantMount',
+                onSessionChange: function (session) {
+                    ResumeBuilderPage.saveVoiceSession(session);
+                },
+                resumeType: 'technical'
+            });
+
+            ResumeBuilderPage.registerVoiceAssistant(assistant);
+        })();
+    </script>
+</body>
+
+</html>

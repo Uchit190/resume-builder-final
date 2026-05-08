@@ -1,0 +1,35 @@
+[build]
+  base = "frontend"
+  publish = "."
+  command = ""
+
+[[redirects]]
+  from = "/dashboard"
+  to = "/dashboard.html"
+  status = 200
+
+[[redirects]]
+  from = "/signup"
+  to = "/signup.html"
+  status = 200
+
+[[redirects]]
+  from = "/technical"
+  to = "/technical.html"
+  status = 200
+
+[[redirects]]
+  from = "/non-technical"
+  to = "/non-technical.html"
+  status = 200
+
+[[redirects]]
+  from = "/login"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Content-Type-Options = "nosniff"

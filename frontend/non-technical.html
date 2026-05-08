@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Non-Technical Resume Builder - ResumeForge</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="non-technical.css" />
+    <link rel="stylesheet" href="voice-assistant.css" />
+</head>
+
+<body>
+    <div class="orb-container">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="orb orb-4"></div>
+        <div class="orb orb-5"></div>
+    </div>
+
+    <div class="stars-container">
+        <div class="meteor meteor-1"></div>
+        <div class="meteor meteor-2"></div>
+        <div class="meteor meteor-3"></div>
+        <div class="meteor meteor-4"></div>
+        <div class="meteor meteor-5"></div>
+    </div>
+
+    <div class="aurora-container">
+        <div class="aurora aurora-1"></div>
+        <div class="aurora aurora-2"></div>
+    </div>
+
+    <canvas id="particleCanvas"></canvas>
+
+    <nav class="navbar anim-fadeInDown">
+        <a href="dashboard.html" class="nav-logo">
+            <div class="nav-logo-icon">📄</div>
+            <span>Resume<em>Forge</em></span>
+        </a>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span class="theme-toggle-icon sun">☀️</span>
+                <span class="theme-toggle-icon moon">🌙</span>
+            </button>
+            <a href="dashboard.html" class="btn-secondary" style="padding:10px 22px;font-size:0.9rem;">← Back</a>
+            <button type="button" onclick="ResumeBuilderPage.logout()" class="btn-secondary"
+                style="padding:10px 22px;font-size:0.9rem;color:#ef4444;border-color:#ef4444;">🚪 Logout</button>
+        </div>
+    </nav>
+
+    <div class="builder-page-wrapper">
+        <div class="builder-page-header anim-fadeInUp delay-1">
+            <div class="builder-page-icon nontech">📈</div>
+            <div>
+                <h1>Non-Technical Resume Builder</h1>
+                <p>For business, operations, finance, sales, marketing, and HR professionals</p>
+            </div>
+            <span class="badge badge-green">Business &amp; Creative</span>
+        </div>
+
+        <section id="voiceAssistantMount" class="anim-fadeInUp delay-2"></section>
+
+        <div class="builder-tabs anim-fadeInUp delay-2">
+            <button class="btab active" data-tab="basics" type="button"
+                onclick="ResumeBuilderPage.switchTab(this,'basics')">📋 Basics</button>
+            <button class="btab" data-tab="experience" type="button"
+                onclick="ResumeBuilderPage.switchTab(this,'experience')">💼 Experience</button>
+            <button class="btab" data-tab="skills" type="button"
+                onclick="ResumeBuilderPage.switchTab(this,'skills')">🏆 Skills</button>
+            <button class="btab" data-tab="achievements" type="button"
+                onclick="ResumeBuilderPage.switchTab(this,'achievements')">📊 Achievements</button>
+            <button class="btab" data-tab="education" type="button"
+                onclick="ResumeBuilderPage.switchTab(this,'education')">🎓 Education</button>
+        </div>
+
+        <div class="builder-body">
+            <div class="tab-content active-tab" id="tab-basics">
+                <div class="section-card glass-card">
+                    <h3 class="section-label">Personal Information</h3>
+                    <div class="form-grid-2">
+                        <div class="input-group">
+                            <label for="nontechnical-full-name">Full Name</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">👤</span>
+                                <input id="nontechnical-full-name" type="text" placeholder="Priya Mehta" />
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="nontechnical-designation">Job Title / Designation</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">💼</span>
+                                <input id="nontechnical-designation" type="text" placeholder="Marketing Manager" />
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="nontechnical-email">Email</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">✉️</span>
+                                <input id="nontechnical-email" type="email" placeholder="priya@example.com" />
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="nontechnical-phone">Phone</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">📞</span>
+                                <input id="nontechnical-phone" type="tel" placeholder="+91 98765 43210" />
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="nontechnical-linkedin">LinkedIn</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">🔗</span>
+                                <input id="nontechnical-linkedin" type="url" placeholder="linkedin.com/in/priyamehta" />
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="nontechnical-location">Location</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">📍</span>
+                                <input id="nontechnical-location" type="text" placeholder="Mumbai, India" />
+                            </div>
+                        </div>
+                        <div class="input-group" style="grid-column:1/-1;">
+                            <label for="nontechnical-summary">Executive Summary / Objective</label>
+                            <textarea id="nontechnical-summary"
+                                placeholder="Results-driven Marketing Manager with 6+ years of experience driving brand growth, managing campaigns, and leading high-performing teams."
+                                rows="4"></textarea>
+                        </div>
+                    </div>
+                    <button class="btn-primary next-btn nontech-btn" type="button"
+                        onclick="ResumeBuilderPage.switchTabByName('experience')">Next: Experience →</button>
+                </div>
+            </div>
+
+            <div class="tab-content" id="tab-experience">
+                <div class="section-card glass-card">
+                    <h3 class="section-label">Work Experience</h3>
+                    <div class="exp-entries" id="expEntries">
+                        <div class="exp-entry">
+                            <div class="form-grid-2">
+                                <div class="input-group">
+                                    <label for="nontechnical-experience-company-1" data-for-base="nontechnical-experience-company">Company Name</label>
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">🏢</span>
+                                        <input id="nontechnical-experience-company-1"
+                                            data-field-base="nontechnical-experience-company" type="text"
+                                            placeholder="Infosys BPM" />
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="nontechnical-experience-designation-1" data-for-base="nontechnical-experience-designation">Designation</label>
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">💼</span>
+                                        <input id="nontechnical-experience-designation-1"
+                                            data-field-base="nontechnical-experience-designation" type="text"
+                                            placeholder="Senior Marketing Manager" />
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="nontechnical-experience-start-1" data-for-base="nontechnical-experience-start">Start Date</label>
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">📅</span>
+                                        <input id="nontechnical-experience-start-1"
+                                            data-field-base="nontechnical-experience-start" type="month" />
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="nontechnical-experience-end-1" data-for-base="nontechnical-experience-end">End Date</label>
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">📅</span>
+                                        <input id="nontechnical-experience-end-1"
+                                            data-field-base="nontechnical-experience-end" type="month" />
+                                    </div>
+                                </div>
+                                <div class="input-group" style="grid-column:1/-1;">
+                                    <label for="nontechnical-experience-kpis-1" data-for-base="nontechnical-experience-kpis">Responsibilities &amp; KPIs</label>
+                                    <textarea id="nontechnical-experience-kpis-1"
+                                        data-field-base="nontechnical-experience-kpis"
+                                        placeholder="• Grew revenue by 35% year over year by launching 3 product lines&#10;• Managed a multi-channel marketing budget and led a cross-functional team to deliver campaigns on time"
+                                        rows="4"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-secondary add-more-btn" type="button"
+                        onclick="ResumeBuilderPage.addEntry('expEntries', 'exp-entry')">+ Add Experience</button>
+                    <button class="btn-primary next-btn nontech-btn" type="button"
+                        onclick="ResumeBuilderPage.switchTabByName('skills')">Next: Skills →</button>
+                </div>
+            </div>
+
+            <div class="tab-content" id="tab-skills">
+                <div class="section-card glass-card">
+                    <h3 class="section-label">Skills &amp; Competencies</h3>
+                    <div class="form-grid-2">
+                        <div class="input-group" style="grid-column:1/-1;">
+                            <label for="nontechnical-core-skills">Core Skills <span class="label-hint">(comma separated)</span></label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">🏆</span>
+                                <input id="nontechnical-core-skills" type="text"
+                                    placeholder="Brand Management, Digital Marketing, CRM, P&L Management" />
+                            </div>
+                        </div>
+                        <div class="input-group" style="grid-column:1/-1;">
+                            <label for="nontechnical-tools">Tools &amp; Software</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">🔧</span>
+                                <input id="nontechnical-tools" type="text"
+                                    placeholder="Salesforce, HubSpot, Google Analytics, Tableau, SAP" />
+                            </div>
+                        </div>
+                        <div class="input-group" style="grid-column:1/-1;">
+                            <label for="nontechnical-leadership-skills">Leadership &amp; Soft Skills</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">👥</span>
+                                <input id="nontechnical-leadership-skills" type="text"
+                                    placeholder="Strategic Planning, Stakeholder Management, Negotiation" />
+                            </div>
+                        </div>
+                        <div class="input-group" style="grid-column:1/-1;">
+                            <label for="nontechnical-languages">Languages</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">🌐</span>
+                                <input id="nontechnical-languages" type="text"
+                                    placeholder="English, Hindi, French" />
+                            </div>
+                        </div>
+                        <div class="input-group" style="grid-column:1/-1;">
+                            <label for="nontechnical-certifications">Certifications</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">🏅</span>
+                                <input id="nontechnical-certifications" type="text"
+                                    placeholder="Google Analytics Certified, PMP, Six Sigma Green Belt" />
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-primary next-btn nontech-btn" type="button"
+                        onclick="ResumeBuilderPage.switchTabByName('achievements')">Next: Achievements →</button>
+                </div>
+            </div>
+
+            <div class="tab-content" id="tab-achievements">
+                <div class="section-card glass-card">
+                    <h3 class="section-label">Key Achievements &amp; Awards</h3>
+                    <div class="exp-entries" id="achieveEntries">
+                        <div class="exp-entry">
+                            <div class="form-grid-2">
+                                <div class="input-group">
+                                    <label for="nontechnical-achievement-title-1" data-for-base="nontechnical-achievement-title">Achievement Title</label>
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">🏆</span>
+                                        <input id="nontechnical-achievement-title-1"
+                                            data-field-base="nontechnical-achievement-title" type="text"
+                                            placeholder="Employee of the Year 2023" />
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label for="nontechnical-achievement-context-1" data-for-base="nontechnical-achievement-context">Organization / Context</label>
+                                    <div class="input-wrapper">
+                                        <span class="input-icon">🏢</span>
+                                        <input id="nontechnical-achievement-context-1"
+                                            data-field-base="nontechnical-achievement-context" type="text"
+                                            placeholder="Infosys BPM, 5000+ employees" />
+                                    </div>
+                                </div>
+                                <div class="input-group" style="grid-column:1/-1;">
+                                    <label for="nontechnical-achievement-impact-1" data-for-base="nontechnical-achievement-impact">Impact / Description</label>
+                                    <textarea id="nontechnical-achievement-impact-1"
+                                        data-field-base="nontechnical-achievement-impact"
+                                        placeholder="Awarded for driving 40% revenue growth and building a high-performing team that surpassed quarterly targets."
+                                        rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-secondary add-more-btn" type="button"
+                        onclick="ResumeBuilderPage.addEntry('achieveEntries', 'exp-entry')">+ Add Achievement</button>
+                    <button class="btn-primary next-btn nontech-btn" type="button"
+                        onclick="ResumeBuilderPage.switchTabByName('education')">Next: Education →</button>
+                </div>
+            </div>
+
+            <div class="tab-content" id="tab-education">
+                <div class="section-card glass-card">
+                    <h3 class="section-label">Education</h3>
+                    <div class="form-grid-2">
+                        <div class="input-group">
+                            <label for="nontechnical-degree">Degree / Qualification</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">🎓</span>
+                                <input id="nontechnical-degree" type="text" placeholder="MBA Marketing" />
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="nontechnical-university">University / Institute</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">🏫</span>
+                                <input id="nontechnical-university" type="text" placeholder="IIM Ahmedabad" />
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="nontechnical-graduation-year">Graduation Year</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">📅</span>
+                                <input id="nontechnical-graduation-year" type="number" placeholder="2019" min="1990"
+                                    max="2030" />
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="nontechnical-grade">Grade / Percentage</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">📊</span>
+                                <input id="nontechnical-grade" type="text" placeholder="Distinction / 78%" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="generate-cta glass-card">
+                        <span>🎉</span>
+                        <p>All done. Review your draft, make any manual edits you want, and save the resume.</p>
+                    </div>
+                    <button class="btn-primary next-btn nontech-btn" type="button"
+                        onclick="ResumeBuilderPage.generateResume(event)">✨ Generate My Resume</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="theme.js"></script>
+    <script src="routes.js"></script>
+    <script src="mic-support.js"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+    <script src="resume-builder-page.js"></script>
+    <script src="ai-interview-assistant.js"></script>
+    <script>
+        (async function initNonTechnicalBuilder() {
+            await ResumeBuilderPage.init({
+                resumeTitle: 'Non-Technical Resume',
+                resumeType: 'non-technical',
+                repeaters: [
+                    { containerId: 'expEntries', className: 'exp-entry' },
+                    { containerId: 'achieveEntries', className: 'exp-entry' }
+                ],
+                prefillMap: [
+                    { id: 'nontechnical-full-name', userKey: 'name' },
+                    { id: 'nontechnical-designation', userKey: 'jobTitle' },
+                    { id: 'nontechnical-email', userKey: 'email' }
+                ],
+                voiceStorageKey: 'rf-voice-session-nontechnical'
+            });
+
+            const assistant = ResumeVoiceAssistant.create({
+                mountSelector: '#voiceAssistantMount',
+                onSessionChange: function (session) {
+                    ResumeBuilderPage.saveVoiceSession(session);
+                },
+                resumeType: 'non-technical'
+            });
+
+            ResumeBuilderPage.registerVoiceAssistant(assistant);
+        })();
+    </script>
+</body>
+
+</html>
