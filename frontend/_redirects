@@ -1,5 +1,8 @@
+# Serve static SEO files before any rewrite rules
 /sitemap.xml      /sitemap.xml          200
 /robots.txt       /robots.txt           200
+
+# Clean URL rewrites for HTML pages
 /dashboard        /dashboard.html       200
 /dashboard/       /dashboard.html       200
 /signup           /signup.html          200

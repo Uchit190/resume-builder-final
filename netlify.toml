@@ -3,6 +3,7 @@
   publish = "."
   command = ""
 
+# ─── SEO static files (must appear FIRST) ───────────────────────────
 [[redirects]]
   from = "/sitemap.xml"
   to = "/sitemap.xml"
@@ -13,6 +14,7 @@
   to = "/robots.txt"
   status = 200
 
+# ─── Clean URL rewrites ─────────────────────────────────────────────
 [[redirects]]
   from = "/dashboard"
   to = "/dashboard.html"
@@ -38,18 +40,54 @@
   to = "/index.html"
   status = 200
 
+# ─── Security headers (all pages) ───────────────────────────────────
 [[headers]]
   for = "/*"
   [headers.values]
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-Content-Type-Options = "nosniff"
 
+# ─── Sitemap: correct Content-Type + cache-busting for crawlers ─────
 [[headers]]
   for = "/sitemap.xml"
   [headers.values]
     Content-Type = "application/xml; charset=utf-8"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
+# ─── robots.txt: correct Content-Type ───────────────────────────────
 [[headers]]
   for = "/robots.txt"
   [headers.values]
     Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# ─── Authenticated / app-only pages: tell crawlers not to index ─────
+[[headers]]
+  for = "/dashboard"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/dashboard.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/technical"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/technical.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/non-technical"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/non-technical.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
