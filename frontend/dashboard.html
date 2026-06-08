@@ -4,16 +4,76 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard — ResumeForge</title>
+    <title>Resume Dashboard | ResumeForge AI Resume Builder</title>
+    <meta name="description"
+        content="Choose a technical or non-technical resume workflow in ResumeForge and build ATS-friendly resumes with AI guidance, templates, and secure saving." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://resume.uchitparashar.in/dashboard" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Resume Dashboard | ResumeForge AI Resume Builder" />
+    <meta property="og:description"
+        content="Choose a technical or non-technical resume workflow in ResumeForge and build ATS-friendly resumes with AI guidance, templates, and secure saving." />
+    <meta property="og:image" content="https://resume.uchitparashar.in/assets/og-image.svg" />
+    <meta property="og:image:alt" content="ResumeForge AI resume builder preview" />
+    <meta property="og:url" content="https://resume.uchitparashar.in/dashboard" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Resume Dashboard | ResumeForge AI Resume Builder" />
+    <meta name="twitter:description"
+        content="Choose a technical or non-technical resume workflow in ResumeForge and build ATS-friendly resumes with AI guidance, templates, and secure saving." />
+    <meta name="twitter:image" content="https://resume.uchitparashar.in/assets/og-image.svg" />
+    <meta name="twitter:image:alt" content="ResumeForge AI resume builder preview" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+        rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="main.css" />
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Organization",
+                    "@id": "https://resume.uchitparashar.in/#organization",
+                    "name": "ResumeForge",
+                    "url": "https://resume.uchitparashar.in/",
+                    "logo": "https://resume.uchitparashar.in/assets/og-image.svg"
+                },
+                {
+                    "@type": "WebSite",
+                    "@id": "https://resume.uchitparashar.in/#website",
+                    "name": "ResumeForge",
+                    "url": "https://resume.uchitparashar.in/",
+                    "description": "AI-powered resume builder for ATS-friendly technical and non-technical resumes.",
+                    "publisher": { "@id": "https://resume.uchitparashar.in/#organization" },
+                    "inLanguage": "en-IN"
+                },
+                {
+                    "@type": "SoftwareApplication",
+                    "@id": "https://resume.uchitparashar.in/#software",
+                    "name": "ResumeForge",
+                    "applicationCategory": "BusinessApplication",
+                    "operatingSystem": "Web",
+                    "url": "https://resume.uchitparashar.in/",
+                    "description": "A web app for creating ATS-friendly resumes with AI interview guidance and resume storage.",
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "0",
+                        "priceCurrency": "INR"
+                    },
+                    "publisher": { "@id": "https://resume.uchitparashar.in/#organization" }
+                }
+            ]
+        }
+    </script>
 </head>
 
 <body>
 
 
 
-        <div class="orb-container">
+        <div class="orb-container" aria-hidden="true">
             <div class="orb orb-1"></div>
             <div class="orb orb-2"></div>
             <div class="orb orb-3"></div>
@@ -21,7 +81,7 @@
             <div class="orb orb-5"></div>
         </div>
 
-        <div class="stars-container">
+        <div class="stars-container" aria-hidden="true">
             <div class="meteor meteor-1"></div>
             <div class="meteor meteor-2"></div>
             <div class="meteor meteor-3"></div>
@@ -29,28 +89,28 @@
             <div class="meteor meteor-5"></div>
         </div>
 
-        <div class="aurora-container">
+        <div class="aurora-container" aria-hidden="true">
             <div class="aurora aurora-1"></div>
             <div class="aurora aurora-2"></div>
         </div>
 
-        <canvas id="particleCanvas"></canvas>
+        <canvas id="particleCanvas" aria-hidden="true"></canvas>
 
         <!-- NAVBAR -->
         <nav class="navbar anim-fadeInDown">
             <a href="dashboard.html" class="nav-logo">
-                <div class="nav-logo-icon">📄</div>
+                <div class="nav-logo-icon" aria-hidden="true">📄</div>
                 <span>Resume<em>Forge</em></span>
             </a>
             <div class="nav-center">
-                <a href="#" class="nav-link active">Dashboard</a>
+                <a href="dashboard.html" class="nav-link active" aria-current="page">Dashboard</a>
                 <a href="#" class="nav-link">My Resumes</a>
                 <a href="#" class="nav-link">Templates</a>
             </div>
             <div class="nav-actions">
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <span class="theme-toggle-icon sun">☀️</span>
-                    <span class="theme-toggle-icon moon">🌙</span>
+                    <span class="theme-toggle-icon sun" aria-hidden="true">☀️</span>
+                    <span class="theme-toggle-icon moon" aria-hidden="true">🌙</span>
                 </button>
                 <div class="user-avatar" title="Profile">RS</div>
             </div>
@@ -77,7 +137,7 @@
                 <div class="type-cards">
 
                     <!-- TECHNICAL -->
-                    <div class="type-big-card glass-card anim-slideLeft delay-2" onclick="openBuilder('technical')">
+                    <article class="type-big-card glass-card anim-slideLeft delay-2">
                         <div class="tbc-bg tech-bg"></div>
                         <div class="tbc-content">
                             <div class="tbc-icon-wrap">
@@ -105,13 +165,13 @@
                                     <span>+20 more</span>
                                 </div>
                             </div>
-                            <button class="btn-primary tbc-btn">Start Technical Resume <span>→</span></button>
+                            <button class="btn-primary tbc-btn" type="button" onclick="openBuilder('technical')"
+                                aria-label="Start technical resume builder">Start Technical Resume <span>→</span></button>
                         </div>
-                    </div>
+                    </article>
 
                     <!-- NON-TECHNICAL -->
-                    <div class="type-big-card glass-card anim-slideRight delay-2"
-                        onclick="openBuilder('non-technical')">
+                    <article class="type-big-card glass-card anim-slideRight delay-2">
                         <div class="tbc-bg non-tech-bg"></div>
                         <div class="tbc-content">
                             <div class="tbc-icon-wrap">
@@ -140,11 +200,12 @@
                                     <span>+18 more</span>
                                 </div>
                             </div>
-                            <button class="btn-primary tbc-btn" style="background: var(--accent-grad-2);">
+                            <button class="btn-primary tbc-btn" type="button" onclick="openBuilder('non-technical')"
+                                aria-label="Start non-technical resume builder" style="background: var(--accent-grad-2);">
                                 Start Non-Tech Resume <span>→</span>
                             </button>
                         </div>
-                    </div>
+                    </article>
 
                 </div>
             </section>
@@ -217,221 +278,6 @@
             </section>
 
         </div><!-- end page-wrapper -->
-
-        <!-- RESUME BUILDER MODAL -->
-        <div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
-            <div class="builder-modal" id="builderModal">
-
-                <div class="modal-header">
-                    <div class="modal-header-left">
-                        <div class="modal-icon" id="modalIcon">💻</div>
-                        <div>
-                            <h3 id="modalTitle">Technical Resume Builder</h3>
-                            <p id="modalSub">Perfect for developers, engineers & tech professionals</p>
-                        </div>
-                    </div>
-                    <button class="modal-close" onclick="closeModal()">✕</button>
-                </div>
-
-                <div class="modal-tabs">
-                    <button class="mtab active" onclick="switchTab(this,'basics')">👤 Basics</button>
-                    <button class="mtab" onclick="switchTab(this,'experience')">💼 Experience</button>
-                    <button class="mtab" onclick="switchTab(this,'skills')">⚡ Skills</button>
-                    <button class="mtab" onclick="switchTab(this,'education')">🎓 Education</button>
-                </div>
-
-                <div class="modal-body">
-
-                    <!-- BASICS TAB -->
-                    <div class="mtab-content active-tab" id="tab-basics">
-                        <div class="modal-form-grid">
-                            <div class="input-group">
-                                <label>Full Name</label>
-                                <div class="input-wrapper">
-                                    <span class="input-icon">👤</span>
-                                    <input type="text" placeholder="Rahul Sharma" />
-                                </div>
-                            </div>
-                            <div class="input-group">
-                                <label>Job Title</label>
-                                <div class="input-wrapper">
-                                    <span class="input-icon">💼</span>
-                                    <input type="text" placeholder="Software Engineer" />
-                                </div>
-                            </div>
-                            <div class="input-group">
-                                <label>Email</label>
-                                <div class="input-wrapper">
-                                    <span class="input-icon">✉️</span>
-                                    <input type="email" placeholder="rahul@example.com" />
-                                </div>
-                            </div>
-                            <div class="input-group">
-                                <label>Phone</label>
-                                <div class="input-wrapper">
-                                    <span class="input-icon">📱</span>
-                                    <input type="tel" placeholder="+91 98765 43210" />
-                                </div>
-                            </div>
-                            <div class="input-group">
-                                <label>City / Location</label>
-                                <div class="input-wrapper">
-                                    <span class="input-icon">📍</span>
-                                    <input type="text" placeholder="Bengaluru, India" />
-                                </div>
-                            </div>
-                            <div class="input-group">
-                                <label>LinkedIn URL</label>
-                                <div class="input-wrapper">
-                                    <span class="input-icon">🔗</span>
-                                    <input type="url" placeholder="linkedin.com/in/rahulsharma" />
-                                </div>
-                            </div>
-                            <div class="input-group" style="grid-column:1/-1;">
-                                <label>Professional Summary</label>
-                                <div class="input-wrapper">
-                                    <span class="input-icon" style="top:14px;align-self:flex-start;">📝</span>
-                                    <textarea placeholder="Brief 2-3 line summary of your experience and goals..."
-                                        rows="3"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="btn-primary" style="align-self:flex-start;"
-                            onclick="switchTabByName('experience')">Next: Experience →</button>
-                    </div>
-
-                    <!-- EXPERIENCE TAB -->
-                    <div class="mtab-content" id="tab-experience">
-                        <div class="exp-entry">
-                            <div class="modal-form-grid">
-                                <div class="input-group">
-                                    <label>Company Name</label>
-                                    <div class="input-wrapper">
-                                        <span class="input-icon">🏢</span>
-                                        <input type="text" placeholder="Google" />
-                                    </div>
-                                </div>
-                                <div class="input-group">
-                                    <label>Role / Position</label>
-                                    <div class="input-wrapper">
-                                        <span class="input-icon">💼</span>
-                                        <input type="text" placeholder="Senior Software Engineer" />
-                                    </div>
-                                </div>
-                                <div class="input-group">
-                                    <label>Start Date</label>
-                                    <div class="input-wrapper">
-                                        <span class="input-icon">📅</span>
-                                        <input type="text" placeholder="Jan 2022" />
-                                    </div>
-                                </div>
-                                <div class="input-group">
-                                    <label>End Date</label>
-                                    <div class="input-wrapper">
-                                        <span class="input-icon">📅</span>
-                                        <input type="text" placeholder="Present" />
-                                    </div>
-                                </div>
-                                <div class="input-group" style="grid-column:1/-1;">
-                                    <label>Key Achievements (bullet points)</label>
-                                    <div class="input-wrapper">
-                                        <span class="input-icon" style="top:14px;align-self:flex-start;">✨</span>
-                                        <textarea
-                                            placeholder="• Reduced load time by 40% by optimizing API calls&#10;• Led team of 5 engineers to deliver project 2 weeks ahead of schedule"
-                                            rows="4"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="btn-secondary add-more-btn" onclick="addExperience()">+ Add Another
-                            Experience</button>
-                        <button class="btn-primary" style="align-self:flex-start;"
-                            onclick="switchTabByName('skills')">Next:
-                            Skills →</button>
-                    </div>
-
-                    <!-- SKILLS TAB -->
-                    <div class="mtab-content" id="tab-skills">
-                        <div class="modal-form-grid">
-                            <div class="input-group" style="grid-column:1/-1;">
-                                <label>Technical Skills (comma separated)</label>
-                                <div class="input-wrapper">
-                                    <span class="input-icon">⚡</span>
-                                    <input type="text" placeholder="JavaScript, React, Node.js, Python, AWS, Docker" />
-                                </div>
-                            </div>
-                            <div class="input-group" style="grid-column:1/-1;">
-                                <label>Tools & Platforms</label>
-                                <div class="input-wrapper">
-                                    <span class="input-icon">🔧</span>
-                                    <input type="text" placeholder="VS Code, Git, Jira, Figma, Postman" />
-                                </div>
-                            </div>
-                            <div class="input-group" style="grid-column:1/-1;">
-                                <label>Soft Skills</label>
-                                <div class="input-wrapper">
-                                    <span class="input-icon">🤝</span>
-                                    <input type="text" placeholder="Team Leadership, Problem Solving, Communication" />
-                                </div>
-                            </div>
-                            <div class="input-group" style="grid-column:1/-1;" id="tech-extra">
-                                <label>GitHub / Portfolio</label>
-                                <div class="input-wrapper">
-                                    <span class="input-icon">💻</span>
-                                    <input type="url" placeholder="https://github.com/yourusername" />
-                                </div>
-                            </div>
-                        </div>
-                        <button class="btn-primary" style="align-self:flex-start;"
-                            onclick="switchTabByName('education')">Next: Education →</button>
-                    </div>
-
-                    <!-- EDUCATION TAB -->
-                    <div class="mtab-content" id="tab-education">
-                        <div class="modal-form-grid">
-                            <div class="input-group">
-                                <label>Degree</label>
-                                <div class="input-wrapper">
-                                    <span class="input-icon">🎓</span>
-                                    <input type="text" placeholder="B.Tech Computer Science" />
-                                </div>
-                            </div>
-                            <div class="input-group">
-                                <label>University / College</label>
-                                <div class="input-wrapper">
-                                    <span class="input-icon">🏫</span>
-                                    <input type="text" placeholder="IIT Delhi" />
-                                </div>
-                            </div>
-                            <div class="input-group">
-                                <label>Year of Graduation</label>
-                                <div class="input-wrapper">
-                                    <span class="input-icon">📅</span>
-                                    <input type="number" placeholder="2023" min="1990" max="2030" />
-                                </div>
-                            </div>
-                            <div class="input-group">
-                                <label>CGPA / Percentage</label>
-                                <div class="input-wrapper">
-                                    <span class="input-icon">📊</span>
-                                    <input type="text" placeholder="8.5 / 10" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-cta">
-                            <div class="cta-info glass-card">
-                                <span>🎉</span>
-                                <p>All done! Your resume is ready to generate.</p>
-                            </div>
-                            <button class="btn-primary" style="width:100%;" onclick="generateResume()">
-                                ✨ Generate My Resume
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
 
         <script src="theme.js"></script>
         <script src="routes.js"></script>

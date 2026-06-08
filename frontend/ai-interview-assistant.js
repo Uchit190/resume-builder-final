@@ -140,7 +140,8 @@ const ResumeVoiceAssistant = (() => {
 
           <footer class="voice-assistant-actions ai-control-bar">
             <div class="ai-manual-input">
-              <textarea class="ai-answer-input" rows="2" placeholder="Type your answer, or use the microphone..."></textarea>
+              <textarea class="ai-answer-input" rows="2" aria-label="AI interview answer"
+                placeholder="Type your answer, or use the microphone..."></textarea>
               <button class="btn-primary assistant-action-send" type="button">Send</button>
             </div>
             <div class="ai-action-row">

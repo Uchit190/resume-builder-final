@@ -1,7 +1,5 @@
 /* ===== style.css — SHARED VARIABLES, DARK/LIGHT MODE, ANIMATIONS ===== */
 
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
-
 /* ===== CSS VARIABLES ===== */
 :root {
     --bg-primary: #f0f4ff;
@@ -851,6 +849,21 @@ textarea::placeholder {
 
     .btn-row {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.001ms !important;
+    }
+
+    #particleCanvas {
+        display: none;
     }
 }
 /* ===== EXTRA BACKGROUND ANIMATIONS ===== */

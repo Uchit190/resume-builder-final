@@ -2,6 +2,17 @@
 const saved = localStorage.getItem('rf-theme') || 'light';
 document.documentElement.setAttribute('data-theme', saved);
 
+function updateThemeToggleState() {
+    const btn = document.getElementById('themeToggle');
+    if (!btn) {
+        return;
+    }
+
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    btn.setAttribute('aria-pressed', String(isDark));
+    btn.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+}
+
 function updateViewportHeight() {
     const viewportHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
     document.documentElement.style.setProperty('--app-vh', `${viewportHeight}px`);
@@ -12,10 +23,12 @@ function toggleTheme() {
     const next = current === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('rf-theme', next);
+    updateThemeToggleState();
 }
 
 document.addEventListener('DOMContentLoaded', function () {
     updateViewportHeight();
+    updateThemeToggleState();
     window.addEventListener('resize', updateViewportHeight);
     if (window.visualViewport) {
         window.visualViewport.addEventListener('resize', updateViewportHeight);
@@ -41,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     const canvas = document.getElementById('particleCanvas');
     if (!canvas) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const ctx = canvas.getContext('2d');
 
     canvas.width = window.innerWidth;

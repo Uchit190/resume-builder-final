@@ -43,17 +43,21 @@ const ResumeBuilderPage = (() => {
 
     document.querySelectorAll('.btab').forEach((tabButton) => {
       tabButton.classList.remove('active');
+      tabButton.setAttribute('aria-selected', 'false');
     });
 
     document.querySelectorAll('.tab-content').forEach((panel) => {
       panel.classList.remove('active-tab');
+      panel.hidden = true;
     });
 
     if (triggerButton) {
       triggerButton.classList.add('active');
+      triggerButton.setAttribute('aria-selected', 'true');
     }
 
     targetPanel.classList.add('active-tab');
+    targetPanel.hidden = false;
   }
 
   function switchTabByName(tabName) {
@@ -281,7 +285,7 @@ const ResumeBuilderPage = (() => {
         saveVoiceSession(state.restoredVoiceSession);
       }
     } catch (error) {
-      console.log(error.message);
+      console.warn(error.message);
     }
 
     hydrateRepeaters();

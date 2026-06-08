@@ -4,15 +4,75 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sign Up — ResumeForge</title>
+  <title>Create Account | ResumeForge AI Resume Builder</title>
+  <meta name="description"
+    content="Create a ResumeForge account to start an AI-guided resume builder for technical, business, finance, HR, marketing, and operations roles." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://resume.uchitparashar.in/signup" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Create Account | ResumeForge AI Resume Builder" />
+  <meta property="og:description"
+    content="Create a ResumeForge account to start an AI-guided resume builder for technical, business, finance, HR, marketing, and operations roles." />
+  <meta property="og:image" content="https://resume.uchitparashar.in/assets/og-image.svg" />
+  <meta property="og:image:alt" content="ResumeForge AI resume builder preview" />
+  <meta property="og:url" content="https://resume.uchitparashar.in/signup" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Create Account | ResumeForge AI Resume Builder" />
+  <meta name="twitter:description"
+    content="Create a ResumeForge account to start an AI-guided resume builder for technical, business, finance, HR, marketing, and operations roles." />
+  <meta name="twitter:image" content="https://resume.uchitparashar.in/assets/og-image.svg" />
+  <meta name="twitter:image:alt" content="ResumeForge AI resume builder preview" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="signup.css" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://resume.uchitparashar.in/#organization",
+          "name": "ResumeForge",
+          "url": "https://resume.uchitparashar.in/",
+          "logo": "https://resume.uchitparashar.in/assets/og-image.svg"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://resume.uchitparashar.in/#website",
+          "name": "ResumeForge",
+          "url": "https://resume.uchitparashar.in/",
+          "description": "AI-powered resume builder for ATS-friendly technical and non-technical resumes.",
+          "publisher": { "@id": "https://resume.uchitparashar.in/#organization" },
+          "inLanguage": "en-IN"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://resume.uchitparashar.in/#software",
+          "name": "ResumeForge",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "url": "https://resume.uchitparashar.in/",
+          "description": "A web app for creating ATS-friendly resumes with AI interview guidance and resume storage.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR"
+          },
+          "publisher": { "@id": "https://resume.uchitparashar.in/#organization" }
+        }
+      ]
+    }
+  </script>
 </head>
 
 <body>
 
 
-  <div class="orb-container">
+  <div class="orb-container" aria-hidden="true">
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
@@ -20,7 +80,7 @@
     <div class="orb orb-5"></div>
   </div>
 
-  <div class="stars-container">
+  <div class="stars-container" aria-hidden="true">
     <div class="meteor meteor-1"></div>
     <div class="meteor meteor-2"></div>
     <div class="meteor meteor-3"></div>
@@ -28,22 +88,22 @@
     <div class="meteor meteor-5"></div>
   </div>
 
-  <div class="aurora-container">
+  <div class="aurora-container" aria-hidden="true">
     <div class="aurora aurora-1"></div>
     <div class="aurora aurora-2"></div>
   </div>
 
-  <canvas id="particleCanvas"></canvas>
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
 
   <nav class="navbar anim-fadeInDown">
     <a href="dashboard.html" class="nav-logo">
-      <div class="nav-logo-icon">📄</div>
+      <div class="nav-logo-icon" aria-hidden="true">📄</div>
       <span>Resume<em>Forge</em></span>
     </a>
     <div class="nav-actions">
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <span class="theme-toggle-icon sun">☀️</span>
-        <span class="theme-toggle-icon moon">🌙</span>
+        <span class="theme-toggle-icon sun" aria-hidden="true">☀️</span>
+        <span class="theme-toggle-icon moon" aria-hidden="true">🌙</span>
       </button>
       <a href="index.html" class="btn-secondary" style="padding:10px 22px;font-size:0.9rem;">Sign In</a>
     </div>
@@ -119,8 +179,8 @@
         <!-- STEP 1 -->
         <div id="step1" class="form-step active-step">
           <div class="social-btns">
-            <button class="social-btn">
-              <svg width="18" height="18" viewBox="0 0 24 24">
+            <button class="social-btn" type="button">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path fill="#EA4335"
                   d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582L19.91 3C17.782 1.145 15.055 0 12 0 7.27 0 3.198 2.698 1.24 6.65l4.026 3.115Z" />
                 <path fill="#34A853"
@@ -132,8 +192,9 @@
               </svg>
               Google
             </button>
-            <button class="social-btn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--text-primary)">
+            <button class="social-btn" type="button">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--text-primary)" aria-hidden="true"
+                focusable="false">
                 <path
                   d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
               </svg>
@@ -144,14 +205,14 @@
           <div class="form-fields">
             <div class="input-row">
               <div class="input-group">
-                <label>First Name</label>
+                <label for="signupFirstName">First Name</label>
                 <div class="input-wrapper">
                   <span class="input-icon">👤</span>
                   <input type="text" id="signupFirstName" placeholder="Rahul" required />
                 </div>
               </div>
               <div class="input-group">
-                <label>Last Name</label>
+                <label for="signupLastName">Last Name</label>
                 <div class="input-wrapper">
                   <span class="input-icon">👤</span>
                   <input type="text" id="signupLastName" placeholder="Sharma" required />
@@ -159,18 +220,19 @@
               </div>
             </div>
             <div class="input-group">
-              <label>Email Address</label>
+              <label for="signupEmail">Email Address</label>
               <div class="input-wrapper">
                 <span class="input-icon">✉️</span>
                 <input type="email" id="signupEmail" placeholder="you@example.com" required />
               </div>
             </div>
             <div class="input-group">
-              <label>Password</label>
+              <label for="signupPass">Password</label>
               <div class="input-wrapper">
                 <span class="input-icon">🔒</span>
                 <input type="password" id="signupPass" placeholder="Min 8 characters" required />
-                <button type="button" class="toggle-pass" onclick="togglePass()">👁️</button>
+                <button type="button" class="toggle-pass" onclick="togglePass()" aria-label="Show password"
+                  aria-controls="signupPass" aria-pressed="false">👁️</button>
               </div>
               <div class="password-strength">
                 <div class="strength-track">
@@ -179,13 +241,13 @@
                 <span class="strength-text" id="strengthText">Strength</span>
               </div>
             </div>
-            <label class="checkbox-label" style="margin-top:4px;">
+            <label class="checkbox-label" for="signupTerms" style="margin-top:4px;">
               <input type="checkbox" id="signupTerms" required />
               <span class="checkbox-custom"></span>
               I agree to the <a href="#" style="color:var(--accent-1);">Terms</a> &amp; <a href="#"
                 style="color:var(--accent-1);">Privacy Policy</a>
             </label>
-            <button class="btn-primary full-width" onclick="goStep2()">Continue <span>→</span></button>
+            <button class="btn-primary full-width" type="button" onclick="goStep2()">Continue <span>→</span></button>
           </div>
         </div>
 
@@ -193,14 +255,14 @@
         <div id="step2" class="form-step">
           <div class="form-fields">
             <div class="input-group">
-              <label>Job Role / Title</label>
+              <label for="signupJobTitle">Job Role / Title</label>
               <div class="input-wrapper">
                 <span class="input-icon">💼</span>
                 <input type="text" id="signupJobTitle" placeholder="e.g. Software Engineer" />
               </div>
             </div>
             <div class="input-group">
-              <label>Career Level</label>
+              <label for="signupCareerLevel">Career Level</label>
               <div class="input-wrapper">
                 <span class="input-icon">📊</span>
                 <select id="signupCareerLevel">
@@ -213,14 +275,16 @@
               </div>
             </div>
             <div class="input-group">
-              <label>Resume Type</label>
-              <div class="type-selector">
-                <div class="type-option active" id="tech-opt" onclick="selectType('technical')">
+              <label id="resumeTypeLabel">Resume Type</label>
+              <div class="type-selector" role="radiogroup" aria-labelledby="resumeTypeLabel">
+                <div class="type-option active" id="tech-opt" role="radio" tabindex="0" aria-checked="true"
+                  onclick="selectType('technical')" onkeydown="handleTypeKeydown(event, 'technical')">
                   <span class="type-icon">💻</span>
                   <strong>Technical</strong>
                   <span>Dev, Data, Design</span>
                 </div>
-                <div class="type-option" id="nontech-opt" onclick="selectType('non-technical')">
+                <div class="type-option" id="nontech-opt" role="radio" tabindex="-1" aria-checked="false"
+                  onclick="selectType('non-technical')" onkeydown="handleTypeKeydown(event, 'non-technical')">
                   <span class="type-icon">📈</span>
                   <strong>Non-Technical</strong>
                   <span>MBA, Finance, HR</span>
@@ -228,8 +292,8 @@
               </div>
             </div>
             <div class="btn-row">
-              <button class="btn-secondary" onclick="goStep1()">← Back</button>
-              <button class="btn-primary" onclick="goToBuilder()">Create Account →</button>
+              <button class="btn-secondary" type="button" onclick="goStep1()">← Back</button>
+              <button class="btn-primary" type="button" onclick="goToBuilder()">Create Account →</button>
             </div>
           </div>
         </div>
@@ -278,7 +342,14 @@
 
     function togglePass() {
       const inp = document.getElementById('signupPass');
-      inp.type = inp.type === 'password' ? 'text' : 'password';
+      const toggle = document.querySelector('.toggle-pass');
+      const isPassword = inp.type === 'password';
+      inp.type = isPassword ? 'text' : 'password';
+
+      if (toggle) {
+        toggle.setAttribute('aria-label', isPassword ? 'Hide password' : 'Show password');
+        toggle.setAttribute('aria-pressed', String(isPassword));
+      }
     }
 
     let currentType = ResumeForgeApp.getResumeType();
@@ -289,6 +360,17 @@
       ResumeForgeApp.setResumeType(type);
       document.getElementById('tech-opt').classList.toggle('active', type === 'technical');
       document.getElementById('nontech-opt').classList.toggle('active', type === 'non-technical');
+      document.getElementById('tech-opt').setAttribute('aria-checked', String(type === 'technical'));
+      document.getElementById('nontech-opt').setAttribute('aria-checked', String(type === 'non-technical'));
+      document.getElementById('tech-opt').tabIndex = type === 'technical' ? 0 : -1;
+      document.getElementById('nontech-opt').tabIndex = type === 'non-technical' ? 0 : -1;
+    }
+
+    function handleTypeKeydown(event, type) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        selectType(type);
+      }
     }
 
     function goStep2() {

@@ -4,14 +4,74 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Technical Resume Builder - ResumeForge</title>
+    <title>Technical Resume Builder | ResumeForge</title>
+    <meta name="description"
+        content="Build an ATS-friendly technical resume for software, data, DevOps, UX, and engineering roles with AI interview guidance and project sections." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://resume.uchitparashar.in/technical" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Technical Resume Builder | ResumeForge" />
+    <meta property="og:description"
+        content="Build an ATS-friendly technical resume for software, data, DevOps, UX, and engineering roles with AI interview guidance and project sections." />
+    <meta property="og:image" content="https://resume.uchitparashar.in/assets/og-image.svg" />
+    <meta property="og:image:alt" content="ResumeForge AI resume builder preview" />
+    <meta property="og:url" content="https://resume.uchitparashar.in/technical" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Technical Resume Builder | ResumeForge" />
+    <meta name="twitter:description"
+        content="Build an ATS-friendly technical resume for software, data, DevOps, UX, and engineering roles with AI interview guidance and project sections." />
+    <meta name="twitter:image" content="https://resume.uchitparashar.in/assets/og-image.svg" />
+    <meta name="twitter:image:alt" content="ResumeForge AI resume builder preview" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+        rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="technical.css" />
     <link rel="stylesheet" href="voice-assistant.css" />
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Organization",
+                    "@id": "https://resume.uchitparashar.in/#organization",
+                    "name": "ResumeForge",
+                    "url": "https://resume.uchitparashar.in/",
+                    "logo": "https://resume.uchitparashar.in/assets/og-image.svg"
+                },
+                {
+                    "@type": "WebSite",
+                    "@id": "https://resume.uchitparashar.in/#website",
+                    "name": "ResumeForge",
+                    "url": "https://resume.uchitparashar.in/",
+                    "description": "AI-powered resume builder for ATS-friendly technical and non-technical resumes.",
+                    "publisher": { "@id": "https://resume.uchitparashar.in/#organization" },
+                    "inLanguage": "en-IN"
+                },
+                {
+                    "@type": "SoftwareApplication",
+                    "@id": "https://resume.uchitparashar.in/#software",
+                    "name": "ResumeForge",
+                    "applicationCategory": "BusinessApplication",
+                    "operatingSystem": "Web",
+                    "url": "https://resume.uchitparashar.in/",
+                    "description": "A web app for creating ATS-friendly resumes with AI interview guidance and resume storage.",
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "0",
+                        "priceCurrency": "INR"
+                    },
+                    "publisher": { "@id": "https://resume.uchitparashar.in/#organization" }
+                }
+            ]
+        }
+    </script>
 </head>
 
 <body>
-    <div class="orb-container">
+    <div class="orb-container" aria-hidden="true">
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
         <div class="orb orb-3"></div>
@@ -19,7 +79,7 @@
         <div class="orb orb-5"></div>
     </div>
 
-    <div class="stars-container">
+    <div class="stars-container" aria-hidden="true">
         <div class="meteor meteor-1"></div>
         <div class="meteor meteor-2"></div>
         <div class="meteor meteor-3"></div>
@@ -27,25 +87,25 @@
         <div class="meteor meteor-5"></div>
     </div>
 
-    <div class="aurora-container">
+    <div class="aurora-container" aria-hidden="true">
         <div class="aurora aurora-1"></div>
         <div class="aurora aurora-2"></div>
     </div>
 
-    <canvas id="particleCanvas"></canvas>
+    <canvas id="particleCanvas" aria-hidden="true"></canvas>
 
     <nav class="navbar anim-fadeInDown">
         <a href="dashboard.html" class="nav-logo">
-            <div class="nav-logo-icon">📄</div>
+            <div class="nav-logo-icon" aria-hidden="true">📄</div>
             <span>Resume<em>Forge</em></span>
         </a>
         <div class="nav-actions">
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                <span class="theme-toggle-icon sun">☀️</span>
-                <span class="theme-toggle-icon moon">🌙</span>
+                <span class="theme-toggle-icon sun" aria-hidden="true">☀️</span>
+                <span class="theme-toggle-icon moon" aria-hidden="true">🌙</span>
             </button>
             <a href="dashboard.html" class="btn-secondary" style="padding:10px 22px;font-size:0.9rem;">← Back</a>
-            <button type="button" onclick="ResumeBuilderPage.logout()" class="btn-secondary"
+            <button type="button" onclick="ResumeBuilderPage.logout()" class="btn-secondary" aria-label="Log out"
                 style="padding:10px 22px;font-size:0.9rem;color:#ef4444;border-color:#ef4444;">🚪 Logout</button>
         </div>
     </nav>
@@ -62,21 +122,26 @@
 
         <section id="voiceAssistantMount" class="anim-fadeInUp delay-2"></section>
 
-        <div class="builder-tabs anim-fadeInUp delay-2">
-            <button class="btab active" data-tab="basics" type="button"
+        <div class="builder-tabs anim-fadeInUp delay-2" role="tablist" aria-label="Technical resume sections">
+            <button class="btab active" data-tab="basics" type="button" role="tab" aria-selected="true"
+                aria-controls="tab-basics"
                 onclick="ResumeBuilderPage.switchTab(this,'basics')">📋 Basics</button>
-            <button class="btab" data-tab="experience" type="button"
+            <button class="btab" data-tab="experience" type="button" role="tab" aria-selected="false"
+                aria-controls="tab-experience"
                 onclick="ResumeBuilderPage.switchTab(this,'experience')">💼 Experience</button>
-            <button class="btab" data-tab="skills" type="button"
+            <button class="btab" data-tab="skills" type="button" role="tab" aria-selected="false"
+                aria-controls="tab-skills"
                 onclick="ResumeBuilderPage.switchTab(this,'skills')">⚡ Skills</button>
-            <button class="btab" data-tab="projects" type="button"
+            <button class="btab" data-tab="projects" type="button" role="tab" aria-selected="false"
+                aria-controls="tab-projects"
                 onclick="ResumeBuilderPage.switchTab(this,'projects')">🚀 Projects</button>
-            <button class="btab" data-tab="education" type="button"
+            <button class="btab" data-tab="education" type="button" role="tab" aria-selected="false"
+                aria-controls="tab-education"
                 onclick="ResumeBuilderPage.switchTab(this,'education')">🎓 Education</button>
         </div>
 
         <div class="builder-body">
-            <div class="tab-content active-tab" id="tab-basics">
+            <div class="tab-content active-tab" id="tab-basics" role="tabpanel">
                 <div class="section-card glass-card">
                     <h3 class="section-label">Personal Information</h3>
                     <div class="form-grid-2">
@@ -141,7 +206,7 @@
                 </div>
             </div>
 
-            <div class="tab-content" id="tab-experience">
+            <div class="tab-content" id="tab-experience" role="tabpanel" hidden>
                 <div class="section-card glass-card">
                     <h3 class="section-label">Work Experience</h3>
                     <div class="exp-entries" id="expEntries">
@@ -196,7 +261,7 @@
                 </div>
             </div>
 
-            <div class="tab-content" id="tab-skills">
+            <div class="tab-content" id="tab-skills" role="tabpanel" hidden>
                 <div class="section-card glass-card">
                     <h3 class="section-label">Skills &amp; Tools</h3>
                     <div class="form-grid-2">
@@ -238,7 +303,7 @@
                 </div>
             </div>
 
-            <div class="tab-content" id="tab-projects">
+            <div class="tab-content" id="tab-projects" role="tabpanel" hidden>
                 <div class="section-card glass-card">
                     <h3 class="section-label">Projects</h3>
                     <div class="exp-entries" id="projectEntries">
@@ -293,7 +358,7 @@
                 </div>
             </div>
 
-            <div class="tab-content" id="tab-education">
+            <div class="tab-content" id="tab-education" role="tabpanel" hidden>
                 <div class="section-card glass-card">
                     <h3 class="section-label">Education</h3>
                     <div class="form-grid-2">
